@@ -10,9 +10,9 @@
 // 
 // e.g new Bezier([ [0, 0], [0.75, 0.25], [1, 1] ])
 //
-// github.com/whatgoodisaroad/bezier-js
+// https://github.com/whatgoodisaroad/bezier-js
 //
-function Bezier(points) {
+module.exports = function (points) {
   points = points;
 
   var 
@@ -141,8 +141,8 @@ function Bezier(points) {
   }
 
   // Sundry helpers.
-  function fact(n)       { return n <= 1 ? 1 : n * fact(n - 1); }
-  function binom(n, k)   { return fact(n) / (fact(k) * fact(n - k)); }
+  function fact(n) { return n <= 1 ? 1 : n * fact(n - 1); }
+  function binom(n, k) { return fact(n) / (fact(k) * fact(n - k)); }
   function sca_mul(s, v) { return v.map(function(e) { return e * s; }); }
   function vec_add(u, v) { return u.map(function(e,i) { return e + v[i]; }); }
   function vec_sub(u, v) { return u.map(function(e,i) { return e - v[i]; }); }
@@ -154,3 +154,4 @@ function Bezier(points) {
     return v;
   }
 }
+
